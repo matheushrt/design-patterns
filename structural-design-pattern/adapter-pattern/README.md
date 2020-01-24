@@ -1,0 +1,5 @@
+# Adapter Pattern
+
+This is a structural pattern where the interface of one class is translated into another. This pattern lets classes work together that could not otherwise because of incompatible interfaces.
+This pattern is often used to create wrappers for new refactored APIs so that other existing old APIs can still work with them. This is usually done when new implementations or code refactoring (done for reasons like performance gains) result in a different public API, while the other parts of the system are still using the old API and need to be adapted to work together.
+In this example, we have an old API, i.e. `OldCalculator` class, and a new API, i.e. `NewCalculator` class. The `OldCalculator` class provides an `operation` method for both addition and subtraction, while the `NewCalculator` provides separate methods for addition and subtraction. The Adapter class `CalcAdapter` wraps the `NewCalculator` to add the `operation` method to the public-facing API while using its own addition and subtraction implementation under the hood.
